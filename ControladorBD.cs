@@ -21,7 +21,7 @@ namespace SAP_BMPro
         {
             connection.Open();
             Boolean success = true;
-            String statement = "DELETE FROM empleados_ixco WHERE uuid ='" +idInvoice + "';";
+            String statement = "DELETE FROM empleados_ixco WHERE emp_numero ='" +employee_number + "';";
             try
             {
                 MySqlCommand command = new MySqlCommand(statement, connection);

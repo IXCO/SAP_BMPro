@@ -52,6 +52,7 @@ namespace SAP_BMPro
             this.procedence = Procedence;
 
         }
+
         public Empleado()
         {
         }
