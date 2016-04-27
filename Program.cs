@@ -11,11 +11,12 @@ namespace SAP_BMPro
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Iniciando");
+            Archivo file = new Archivo();
+            file.clearLocalDirectory();
             FTP ftp_connection = new FTP();
             Console.WriteLine("Descargando archivos");
-            //ftp_connection.getFiles();
-            Archivo file = new Archivo();
-            //file.clearLocalDirectory();
+            ftp_connection.getFiles();
             Archivo local_file = file.getLocalFile();
             if (local_file.hasFile())
             {
@@ -89,6 +90,7 @@ namespace SAP_BMPro
                     current_employee.procedence=Int32.Parse(columns[17]);
 
                     Console.WriteLine("Insertando registro");
+                    db.insertEmployee(current_employee);
                     Console.WriteLine("Exito!");
                     Console.WriteLine("Siguiente registro");
                 }
